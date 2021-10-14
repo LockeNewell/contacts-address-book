@@ -1,0 +1,36 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "asd",
+      "emails": ["test@test.com",
+        "test2@test.com",
+        "test3@test.com"]
+    },
+    {
+      "id": 2,
+      "firstName": "Alex",
+      "lastName": "Sainz",
+      "emails": ["test@test.com",
+        "test2@test.com",
+        "test3@test.com"]
+    },
+    {
+      "id": 3,
+      "firstName": "Jeb",
+      "lastName": "Jackson",
+      "emails": ["test@test.com",
+        "test2@test.com",
+        "test3@test.com"]
+    },
+    {
+      "id": 4,
+      "firstName": "Locke",
+      "lastName": "Newell",
+      "emails": ["test@test.com",
+        "test2@test.com",
+        "test3@test.com"]
+    }
+  ]
+}

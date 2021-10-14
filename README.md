@@ -36,3 +36,32 @@ Impress us!
 - Deploy it on a publicly accessible URL
 - Put the source code on a publicly accessible repo on github/gitlab/bitbucket
 - Reply to this email with the links to both the app and repo
+
+
+
+## Development Environment 
+
+* [Express](https://expressjs.com/)
+* [Angular CLI](https://cli.angular.io/)
+* [json-server](https://github.com/typicode/json-server)
+  * A full fake REST API
+
+
+## Running the Application
+
+Review the available scripts in the [package.json](package.json)   
+
+## Run in Production Mode
+
+Application will run on [localhost:8000](http://localhost:8000)
+
+Enter any username and password to login
+
+`npm start`
+
+## Run in Development Mode
+
+Application will run on [localhost:4200](http://localhost:4200)
+
+
+`npm run start-dev`

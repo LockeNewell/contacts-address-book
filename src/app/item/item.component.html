@@ -1,0 +1,100 @@
+
+<div class="container-fluid d-flex flex-column pt-5">
+  <form [formGroup]="contactForm"  (ngSubmit)="ValidateCreateOrUpdate()">
+    <ng-container *ngIf="!isUnset" >
+      <div class="d-flex flex-row">
+        <div *ngIf='isEdit'  class="p-2 form-group">
+          <label>First name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            formControlName="firstName"
+            placeholder="First Name"
+          />
+          <div [hidden]="firstName.valid || firstName.pristine"
+              class="alert alert-danger">
+            First Name is required
+          </div>
+        </div>
+        <div *ngIf='isView' class="p-2 form-group">
+          <label>First name</label><br>
+          {{contactModel.firstName}}
+
+        </div>
+        <div *ngIf='isEdit'  class="p-2 form-group">
+          <label>Last name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            formControlName="lastName"
+            placeholder="Last Name"
+          />
+          <div [hidden]="lastName.valid || lastName.pristine"
+              class="alert alert-danger">
+            Last Name is required
+          </div>
+        </div>
+        <div *ngIf='isView' class="p-2 form-group">
+          <label>Last name</label><br>
+          {{contactModel.lastName}}
+
+        </div>
+      </div>
+      
+      <div class="p-2 d-flex flex-column">
+        <label>Emails</label>
+        <div class="p-1 d-flex flex-row" *ngFor="let email of contactModel.emails">
+          <div>
+            {{email}}
+          </div>
+          <div class="pl-2">
+            <button  *ngIf='isEdit' class="btn btn-secondary btn-sm pt-1" (click)="doRemoveEmail()">
+              <fa-icon [icon]="faClose" [styles]="{'width': '13px', 'height':'18px'}"></fa-icon>
+            </button>
+          </div>
+        </div>
+        <div *ngIf='isEdit' class="p-1 d-flex flex-row">
+          <div>
+            <input id="newEmail" [(ngModel)]="newEmail">
+          </div>
+          <div class="pl-2">
+            <button id="return"  class="btn btn-secondary" (click)="doAddEmail()">
+              add email
+            </button>
+          </div>
+        </div>
+
+      </div>
+    
+        <div class='p-0 d-flex flex-row'>
+          <ng-container *ngIf="isEdit; else view_controls;">
+            <div class="p-2">
+              <button id="submit" type="submit" class="btn btn-primary" [disabled]="!isFormValid">
+                Save Contact
+              </button>
+            </div>
+            <div class="p-2">
+              <button id="cancel" (click)="doAddEmail()" class="btn btn-primary pl-2">
+                Cancel
+              </button>
+            </div>
+            <div class="p-2">
+              <button id="delete" (click)="doDelete()" class="btn btn-primary pull-right">
+                Delete Contact
+              </button>
+            </div>
+          </ng-container>
+          <ng-template #view_controls>
+            <div class="p-2">
+              <button id="edit" (click)='doSetViewToEdit()' class="btn btn-primary pull-left" >
+                Edit
+              </button>
+            </div>
+          </ng-template>
+        </div>
+    </ng-container>
+  </form>
+</div>
+

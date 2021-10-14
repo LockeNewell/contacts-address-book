@@ -1,0 +1,10 @@
+#addContactButton {
+  margin-bottom: 10px;
+}
+
+.selectedItem {
+  
+    background: linear-gradient( to right, #E2DFBC 20%, #FFFFFF 100%);
+
+}
+

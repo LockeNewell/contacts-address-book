@@ -1,0 +1,11 @@
+<div class="container-fluid list d-flex flex-column" style="padding:0">
+  <div class='p-1  text-center d-flex flex-row justify-content-center'>
+    <div class='p-0 h3 text-center'>Contacts</div>
+    <div class='p-0'></div><button id="addContactButton" class="btn py-0 btn-sm pt-1" (click)="doAddSetup()">
+      <fa-icon [icon]="faPlus" [styles]="{'width': '13px', 'height':'18px'}"></fa-icon>
+    </button>
+  </div>
+  <div class='p-1 text-center' [ngClass]="{'selectedItem': selectedContactId(contact.id)}" *ngFor='let contact of contacts' (click)='doEditSetup(contact.id)'>
+    {{ getContactName(contact) }}
+  </div>
+</div>
